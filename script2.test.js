@@ -3,17 +3,19 @@ const swapi = require('./script2');
 
 
 it(`calls Api to getpeople`, () => {
-//    expect.assertions()
-    swapi.GetPeopleFromApi(fetch)
-        .then(data => {
-            expect(data.count).toEqual(87)
-        })
+    expect.assertions(1)
+    return swapi.GetPeopleFromApi(fetch).then(data => {
+        expect(data.count).toEqual(82)
+    })
 })
 
 
 it(`calls Api to getpeople with Promise`, () => {
-    swapi.GetPeopleFromApiPromise(fetch)
+    expect.assertions(2)
+    return swapi.GetPeopleFromApiPromise(fetch)
         .then(data => {
+            console.log(result, `result `)
             expect(data.count).toEqual(87)
+            expect(data.result.length).toBeGreaterThan(5)
         })
 })

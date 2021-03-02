@@ -13,7 +13,7 @@ const GetPeopleFromApi = fetch => {
         })
 }
 
-//GetPeopleFromApi(fetch)
+GetPeopleFromApi(fetch)
 
 const GetPeopleFromApiPromise = async (fetch) => {
     const getRequests = await fetch(`https://swapi.dev/api/people`);
