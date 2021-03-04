@@ -16,17 +16,17 @@ const GetPeopleFromApi = fetch => {
 GetPeopleFromApi(fetch)
 
 const GetPeopleFromApiPromise = async (fetch) => {
-    const getRequests = await fetch(`https://swapi.dev/api/people`);
-    const data = await getRequests.json();
+    const getRequest = await fetch(`https://swapi.dev/api/people`);
+    const data = await getRequest.json();
     return {
         count: data.count,
-        result: data.result,
+        results: data.results,
     }
 }
 
 
 //GetPeopleFromApi(fetch)
-GetPeopleFromApiPromise(fetch)
+//GetPeopleFromApiPromise(fetch)
 //console.log()
 
 
